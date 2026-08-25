@@ -1,11 +1,11 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 
-// If already logged in, send straight to their dashboard
 if (isset($_SESSION['role'])) {
     header("Location: /smartfarm/" . $_SESSION['role'] . "/dashboard.php");
     exit;
 }
+
 
 $pageTitle = "Welcome";
 require_once __DIR__ . '/includes/header.php';
