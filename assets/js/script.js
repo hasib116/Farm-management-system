@@ -7,7 +7,6 @@ function initCart() {
     const addButtons = document.querySelectorAll(".add-to-cart");
     if (!addButtons.length) return; // not on the marketplace page
 
-    // cart = { productId: { qty, price, name } }
     let cart = {};
 
     const cartList = document.getElementById("cart-list");
