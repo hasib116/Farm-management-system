@@ -28,8 +28,8 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 
 <div class="quick-links">
-    <a href="/smartfarm/buyer/marketplace.php" class="card link-card">🛒 Browse Marketplace</a>
-    <a href="/smartfarm/buyer/orders.php" class="card link-card">📦 Track My Orders</a>
+    <a href="/smartfarm/buyer/marketplace.php" class="card link-card"> Browse Marketplace</a>
+    <a href="/smartfarm/buyer/orders.php" class="card link-card"> Track My Orders</a>
 </div>
 
 <div class="card">
@@ -40,7 +40,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <?php if ($p['image']): ?>
                     <img src="/smartfarm/assets/uploads/<?php echo htmlspecialchars($p['image']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>">
                 <?php else: ?>
-                    <div class="product-placeholder">🌽</div>
+                    <div class="product-placeholder"></div>
                 <?php endif; ?>
                 <h3><?php echo htmlspecialchars($p['name']); ?></h3>
                 <p>৳<?php echo number_format($p['price'], 2); ?> / <?php echo htmlspecialchars($p['unit']); ?></p>
