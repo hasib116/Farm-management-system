@@ -52,23 +52,31 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="card">
     <h2>Current Stock</h2>
     <table class="data-table">
-        <tr><th>Item</th><th>Category</th><th>Quantity</th><th>Threshold</th><th>Status</th><th>Update Qty</th><th>Action</th></tr>
-        <?php foreach ($items as $item): ?>
-        <tr class="<?php echo $item['quantity'] <= $item['low_stock_threshold'] ? 'row-warning' : ''; ?>">
-            <td><?php echo htmlspecialchars($item['item_name']); ?></td>
-            <td><?php echo htmlspecialchars($item['category']); ?></td>
-            <td><?php echo $item['quantity'] . ' ' . htmlspecialchars($item['unit']); ?></td>
-            <td><?php echo $item['low_stock_threshold']; ?></td>
-            <td><?php echo $item['quantity'] <= $item['low_stock_threshold'] ? '⚠️ Low Stock' : '✅ OK'; ?></td>
-            <td>
-                <form method="POST" class="tiny-inline-form">
-                    <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
-                    <input type="number" step="0.01" name="new_quantity" value="<?php echo $item['quantity']; ?>" style="width:80px;">
-                    <button type="submit" name="update_qty" class="btn btn-small">Update</button>
-                </form>
-            </td>
-            <td><a href="?delete=<?php echo $item['id']; ?>" onclick="return confirm('Delete this item?')" class="link-danger">Delete</a></td>
+        <tr>
+            <th>Item</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Threshold</th>
+            <th>Status</th>
+            <th>Update Qty</th>
+            <th>Action</th>
         </tr>
+        <?php foreach ($items as $item): ?>
+            <tr class="<?php echo $item['quantity'] <= $item['low_stock_threshold'] ? 'row-warning' : ''; ?>">
+                <td><?php echo htmlspecialchars($item['item_name']); ?></td>
+                <td><?php echo htmlspecialchars($item['category']); ?></td>
+                <td><?php echo $item['quantity'] . ' ' . htmlspecialchars($item['unit']); ?></td>
+                <td><?php echo $item['low_stock_threshold']; ?></td>
+                <td><?php echo $item['quantity'] <= $item['low_stock_threshold'] ? ' Low Stock' : ' OK'; ?></td>
+                <td>
+                    <form method="POST" class="tiny-inline-form">
+                        <input type="hidden" name="item_id" value="<?php echo $item['id']; ?>">
+                        <input type="number" step="0.01" name="new_quantity" value="<?php echo $item['quantity']; ?>" style="width:80px;">
+                        <button type="submit" name="update_qty" class="btn btn-small">Update</button>
+                    </form>
+                </td>
+                <td><a href="?delete=<?php echo $item['id']; ?>" onclick="return confirm('Delete this item?')" class="link-danger">Delete</a></td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </div>
