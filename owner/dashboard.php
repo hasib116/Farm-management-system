@@ -43,31 +43,36 @@ require_once __DIR__ . '/../includes/header.php';
 </div>
 
 <div class="card">
-    <h2>⚠️ Low Stock Alerts</h2>
+    <h2>Low Stock Alerts</h2>
     <?php if (empty($lowStockItems)): ?>
         <p>All inventory levels are healthy.</p>
     <?php else: ?>
         <table class="data-table">
-            <tr><th>Item</th><th>Category</th><th>Quantity</th><th>Threshold</th></tr>
-            <?php foreach ($lowStockItems as $item): ?>
-            <tr class="row-warning">
-                <td><?php echo htmlspecialchars($item['item_name']); ?></td>
-                <td><?php echo htmlspecialchars($item['category']); ?></td>
-                <td><?php echo $item['quantity'] . ' ' . htmlspecialchars($item['unit']); ?></td>
-                <td><?php echo $item['low_stock_threshold']; ?></td>
+            <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Threshold</th>
             </tr>
+            <?php foreach ($lowStockItems as $item): ?>
+                <tr class="row-warning">
+                    <td><?php echo htmlspecialchars($item['item_name']); ?></td>
+                    <td><?php echo htmlspecialchars($item['category']); ?></td>
+                    <td><?php echo $item['quantity'] . ' ' . htmlspecialchars($item['unit']); ?></td>
+                    <td><?php echo $item['low_stock_threshold']; ?></td>
+                </tr>
             <?php endforeach; ?>
         </table>
     <?php endif; ?>
 </div>
 
 <div class="quick-links">
-    <a href="/smartfarm/owner/tasks.php" class="card link-card">📋 Manage Tasks</a>
-    <a href="/smartfarm/owner/inventory.php" class="card link-card">📦 Manage Inventory</a>
-    <a href="/smartfarm/owner/crops.php" class="card link-card">🌱 Manage Crops</a>
-    <a href="/smartfarm/owner/products.php" class="card link-card">🛒 Marketplace</a>
-    <a href="/smartfarm/owner/orders.php" class="card link-card">📦 Orders</a>
-    <a href="/smartfarm/owner/reports.php" class="card link-card">📊 Reports</a>
+    <a href="/smartfarm/owner/tasks.php" class="card link-card"> Manage Tasks</a>
+    <a href="/smartfarm/owner/inventory.php" class="card link-card"> Manage Inventory</a>
+    <a href="/smartfarm/owner/crops.php" class="card link-card"> Manage Crops</a>
+    <a href="/smartfarm/owner/products.php" class="card link-card"> Marketplace</a>
+    <a href="/smartfarm/owner/orders.php" class="card link-card"> Orders</a>
+    <a href="/smartfarm/owner/reports.php" class="card link-card"> Reports</a>
 </div>
 
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
