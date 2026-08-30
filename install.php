@@ -196,7 +196,7 @@ try {
     <main class="container">
         <div class="auth-wrapper">
             <div class="auth-box" style="max-width:600px;">
-                <h1>🌾 SmartFarm Installation</h1>
+                <h1> SmartFarm Installation</h1>
 
                 <div class="card" style="border:none;padding:0;">
                     <ul style="line-height:1.9;">
