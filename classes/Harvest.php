@@ -20,7 +20,6 @@ class Harvest
         $ok = $stmt->execute();
 
         if ($ok) {
-            // mark the crop as harvested
             $cropStmt = $this->conn->prepare("UPDATE crops SET status = 'harvested' WHERE id = ?");
             $cropStmt->bind_param("i", $crop_id);
             $cropStmt->execute();
