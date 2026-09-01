@@ -37,8 +37,7 @@ class Order
             foreach ($items as $item) {
                 $itemStmt->bind_param("iidd", $order_id, $item['product_id'], $item['quantity'], $item['price']);
                 $itemStmt->execute();
-
-                // reduce stock for the purchased product
+                
                 $productModel->reduceStock($item['product_id'], $item['quantity']);
             }
 
