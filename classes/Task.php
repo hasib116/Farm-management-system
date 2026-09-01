@@ -12,7 +12,6 @@ class Task
         $this->conn = $db->connect();
     }
 
-    // Owner creates a task and assigns it to a worker
     public function create($title, $description, $assigned_to, $assigned_by, $crop_id, $due_date)
     {
         $sql = "INSERT INTO {$this->table} (title, description, assigned_to, assigned_by, crop_id, due_date) VALUES (?, ?, ?, ?, ?, ?)";
