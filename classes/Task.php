@@ -31,7 +31,6 @@ class Task
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // Tasks assigned to a specific worker
     public function getByWorker($worker_id)
     {
         $sql = "SELECT t.*, c.name AS crop_name
