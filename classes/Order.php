@@ -13,10 +13,6 @@ class Order
         $this->conn = $db->connect();
     }
 
-    /**
-     * Places an order with multiple items in a single DB transaction.
-     
-     */
     public function placeOrder($buyer_id, $items, $payment_method)
     {
         $this->conn->begin_transaction();
