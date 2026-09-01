@@ -15,7 +15,7 @@ class Order
 
     /**
      * Places an order with multiple items in a single DB transaction.
-     * $items = [ [product_id, quantity, price], ... ]
+     
      */
     public function placeOrder($buyer_id, $items, $payment_method)
     {
