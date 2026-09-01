@@ -88,7 +88,6 @@ function initCart() {
     }
 }
 
-/* -------------------- Auto-hide success alerts -------------------- */
 function autoHideAlerts() {
     const alerts = document.querySelectorAll(".alert:not(.alert-error)");
     alerts.forEach(a => {
