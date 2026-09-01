@@ -20,7 +20,6 @@ class Product
         return $stmt->execute();
     }
 
-    // All products available in the marketplace (buyer view - only in-stock)
     public function getAvailable()
     {
         $sql = "SELECT * FROM {$this->table} WHERE stock_quantity > 0 ORDER BY created_at DESC";
