@@ -8,7 +8,7 @@ $productModel = new Product();
 $orderModel = new Order();
 $message = "";
 
-// Handle order placement (cart items sent as JSON from JS)
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
     $cart = json_decode($_POST['cart_data'], true);
 
