@@ -101,7 +101,6 @@ class Order
         return $stmt->execute();
     }
 
-    // financial report helper: total revenue
     public function totalRevenue()
     {
         $sql = "SELECT SUM(total_amount) AS revenue FROM {$this->table} WHERE status != 'cancelled'";
