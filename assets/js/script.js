@@ -68,7 +68,6 @@ function initCart() {
         });
     }
 
-    // Before submitting the order form, serialize the cart into the hidden input
     if (orderForm) {
         orderForm.addEventListener("submit", function (e) {
             if (Object.keys(cart).length === 0) {
