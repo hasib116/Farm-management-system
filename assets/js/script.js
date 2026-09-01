@@ -59,7 +59,6 @@ function initCart() {
 
         cartTotal.textContent = total.toFixed(2);
 
-        // wire up remove buttons
         cartList.querySelectorAll("[data-remove]").forEach(link => {
             link.addEventListener("click", function (e) {
                 e.preventDefault();
