@@ -10,7 +10,6 @@ $log = [];
 $hasError = false;
 
 try {
-    // Step 1: connect WITHOUT selecting a database yet (mysqli OOP)
     $mysqli = new mysqli($host, $username, $password);
     if ($mysqli->connect_error) {
         throw new Exception("Connection failed: " . $mysqli->connect_error);
