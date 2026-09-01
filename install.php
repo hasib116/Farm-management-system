@@ -153,7 +153,7 @@ try {
         }
     }
 
-    // Step 5: seed demo accounts (only if users table is empty)
+    
     $result = $mysqli->query("SELECT COUNT(*) AS total FROM users");
     $count = $result->fetch_assoc()['total'];
 
