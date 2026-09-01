@@ -13,10 +13,6 @@ class Order
         $this->conn = $db->connect();
     }
 
-    /**
-     * Places an order with multiple items in a single DB transaction.
-     * $items = [ [product_id, quantity, price], ... ]
-     */
     public function placeOrder($buyer_id, $items, $payment_method)
     {
         $this->conn->begin_transaction();
@@ -41,8 +37,7 @@ class Order
             foreach ($items as $item) {
                 $itemStmt->bind_param("iidd", $order_id, $item['product_id'], $item['quantity'], $item['price']);
                 $itemStmt->execute();
-
-                // reduce stock for the purchased product
+                
                 $productModel->reduceStock($item['product_id'], $item['quantity']);
             }
 
@@ -105,7 +100,6 @@ class Order
         return $stmt->execute();
     }
 
-    // financial report helper: total revenue
     public function totalRevenue()
     {
         $sql = "SELECT SUM(total_amount) AS revenue FROM {$this->table} WHERE status != 'cancelled'";

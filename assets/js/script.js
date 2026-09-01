@@ -59,7 +59,6 @@ function initCart() {
 
         cartTotal.textContent = total.toFixed(2);
 
-        // wire up remove buttons
         cartList.querySelectorAll("[data-remove]").forEach(link => {
             link.addEventListener("click", function (e) {
                 e.preventDefault();
@@ -69,7 +68,6 @@ function initCart() {
         });
     }
 
-    // Before submitting the order form, serialize the cart into the hidden input
     if (orderForm) {
         orderForm.addEventListener("submit", function (e) {
             if (Object.keys(cart).length === 0) {
