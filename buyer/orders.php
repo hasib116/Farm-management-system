@@ -62,5 +62,3 @@ require_once __DIR__ . '/../includes/header.php';
         </table>
     </div>
 <?php endforeach; ?>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

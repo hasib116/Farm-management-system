@@ -63,16 +63,19 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="card">
     <h2>My Harvest Records</h2>
     <table class="data-table">
-        <tr><th>Crop</th><th>Quantity</th><th>Grade</th><th>Date</th></tr>
-        <?php foreach ($harvests as $h): ?>
         <tr>
-            <td><?php echo htmlspecialchars($h['crop_name']); ?></td>
-            <td><?php echo $h['quantity'] . ' ' . htmlspecialchars($h['unit']); ?></td>
-            <td><?php echo $h['quality_grade']; ?></td>
-            <td><?php echo $h['harvest_date']; ?></td>
+            <th>Crop</th>
+            <th>Quantity</th>
+            <th>Grade</th>
+            <th>Date</th>
         </tr>
+        <?php foreach ($harvests as $h): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($h['crop_name']); ?></td>
+                <td><?php echo $h['quantity'] . ' ' . htmlspecialchars($h['unit']); ?></td>
+                <td><?php echo $h['quality_grade']; ?></td>
+                <td><?php echo $h['harvest_date']; ?></td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

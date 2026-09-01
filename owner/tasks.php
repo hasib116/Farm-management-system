@@ -45,51 +45,56 @@ require_once __DIR__ . '/../includes/header.php';
     <?php if (empty($workers)): ?>
         <p>No farm workers registered yet. Ask a worker to register first.</p>
     <?php else: ?>
-    <form method="POST" class="stacked-form">
-        <label>Task Title</label>
-        <input type="text" name="title" required>
+        <form method="POST" class="stacked-form">
+            <label>Task Title</label>
+            <input type="text" name="title" required>
 
-        <label>Description</label>
-        <textarea name="description" required></textarea>
+            <label>Description</label>
+            <textarea name="description" required></textarea>
 
-        <label>Assign To</label>
-        <select name="assigned_to" required>
-            <?php foreach ($workers as $w): ?>
-                <option value="<?php echo $w['id']; ?>"><?php echo htmlspecialchars($w['name']); ?></option>
-            <?php endforeach; ?>
-        </select>
+            <label>Assign To</label>
+            <select name="assigned_to" required>
+                <?php foreach ($workers as $w): ?>
+                    <option value="<?php echo $w['id']; ?>"><?php echo htmlspecialchars($w['name']); ?></option>
+                <?php endforeach; ?>
+            </select>
 
-        <label>Related Crop (optional)</label>
-        <select name="crop_id">
-            <option value="">-- None --</option>
-            <?php foreach ($crops as $c): ?>
-                <option value="<?php echo $c['id']; ?>"><?php echo htmlspecialchars($c['name']); ?></option>
-            <?php endforeach; ?>
-        </select>
+            <label>Related Crop (optional)</label>
+            <select name="crop_id">
+                <option value="">-- None --</option>
+                <?php foreach ($crops as $c): ?>
+                    <option value="<?php echo $c['id']; ?>"><?php echo htmlspecialchars($c['name']); ?></option>
+                <?php endforeach; ?>
+            </select>
 
-        <label>Due Date</label>
-        <input type="date" name="due_date" required>
+            <label>Due Date</label>
+            <input type="date" name="due_date" required>
 
-        <button type="submit" name="add_task" class="btn">Assign Task</button>
-    </form>
+            <button type="submit" name="add_task" class="btn">Assign Task</button>
+        </form>
     <?php endif; ?>
 </div>
 
 <div class="card">
     <h2>All Tasks</h2>
     <table class="data-table">
-        <tr><th>Title</th><th>Worker</th><th>Crop</th><th>Due Date</th><th>Status</th><th>Action</th></tr>
-        <?php foreach ($tasks as $t): ?>
         <tr>
-            <td><?php echo htmlspecialchars($t['title']); ?></td>
-            <td><?php echo htmlspecialchars($t['worker_name']); ?></td>
-            <td><?php echo htmlspecialchars($t['crop_name'] ?? '-'); ?></td>
-            <td><?php echo $t['due_date']; ?></td>
-            <td><span class="badge badge-<?php echo $t['status']; ?>"><?php echo str_replace('_',' ',$t['status']); ?></span></td>
-            <td><a href="?delete=<?php echo $t['id']; ?>" onclick="return confirm('Delete this task?')" class="link-danger">Delete</a></td>
+            <th>Title</th>
+            <th>Worker</th>
+            <th>Crop</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Action</th>
         </tr>
+        <?php foreach ($tasks as $t): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($t['title']); ?></td>
+                <td><?php echo htmlspecialchars($t['worker_name']); ?></td>
+                <td><?php echo htmlspecialchars($t['crop_name'] ?? '-'); ?></td>
+                <td><?php echo $t['due_date']; ?></td>
+                <td><span class="badge badge-<?php echo $t['status']; ?>"><?php echo str_replace('_', ' ', $t['status']); ?></span></td>
+                <td><a href="?delete=<?php echo $t['id']; ?>" onclick="return confirm('Delete this task?')" class="link-danger">Delete</a></td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

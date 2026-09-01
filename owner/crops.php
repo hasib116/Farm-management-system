@@ -39,17 +39,21 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="card">
     <h2>All Crops</h2>
     <table class="data-table">
-        <tr><th>Name</th><th>Variety</th><th>Planted</th><th>Expected Harvest</th><th>Status</th></tr>
-        <?php foreach ($crops as $c): ?>
         <tr>
-            <td><?php echo htmlspecialchars($c['name']); ?></td>
-            <td><?php echo htmlspecialchars($c['variety']); ?></td>
-            <td><?php echo $c['planted_date']; ?></td>
-            <td><?php echo $c['expected_harvest_date']; ?></td>
-            <td><span class="badge badge-<?php echo $c['status']; ?>"><?php echo $c['status']; ?></span></td>
+            <th>Name</th>
+            <th>Variety</th>
+            <th>Planted</th>
+            <th>Expected Harvest</th>
+            <th>Status</th>
         </tr>
+        <?php foreach ($crops as $c): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($c['name']); ?></td>
+                <td><?php echo htmlspecialchars($c['variety']); ?></td>
+                <td><?php echo $c['planted_date']; ?></td>
+                <td><?php echo $c['expected_harvest_date']; ?></td>
+                <td><span class="badge badge-<?php echo $c['status']; ?>"><?php echo $c['status']; ?></span></td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

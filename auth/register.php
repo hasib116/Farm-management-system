@@ -91,5 +91,3 @@ require_once __DIR__ . '/../includes/header.php';
         <p class="auth-switch">Already have an account? <a href="/smartfarm/auth/login.php">Login here</a></p>
     </div>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

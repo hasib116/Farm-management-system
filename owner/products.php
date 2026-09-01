@@ -76,25 +76,23 @@ require_once __DIR__ . '/../includes/header.php';
     <h2>My Listed Products</h2>
     <div class="product-grid">
         <?php foreach ($products as $p): ?>
-        <div class="product-card">
-            <?php if ($p['image']): ?>
-                <img src="/smartfarm/assets/uploads/<?php echo htmlspecialchars($p['image']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>">
-            <?php else: ?>
-                <div class="product-placeholder">🌽</div>
-            <?php endif; ?>
-            <h3><?php echo htmlspecialchars($p['name']); ?></h3>
-            <p><?php echo htmlspecialchars($p['description']); ?></p>
-            <form method="POST" class="tiny-inline-form">
-                <input type="hidden" name="product_id" value="<?php echo $p['id']; ?>">
-                <label>৳ <input type="number" step="0.01" name="price" value="<?php echo $p['price']; ?>" style="width:70px;"></label>
-                <label>Stock <input type="number" step="0.01" name="stock_quantity" value="<?php echo $p['stock_quantity']; ?>" style="width:70px;"></label>
-                / <?php echo htmlspecialchars($p['unit']); ?>
-                <button type="submit" name="update_product" class="btn btn-small">Update</button>
-            </form>
-            <a href="?delete=<?php echo $p['id']; ?>" onclick="return confirm('Remove this product?')" class="link-danger">Remove</a>
-        </div>
+            <div class="product-card">
+                <?php if ($p['image']): ?>
+                    <img src="/smartfarm/assets/uploads/<?php echo htmlspecialchars($p['image']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>">
+                <?php else: ?>
+                    <div class="product-placeholder">🌽</div>
+                <?php endif; ?>
+                <h3><?php echo htmlspecialchars($p['name']); ?></h3>
+                <p><?php echo htmlspecialchars($p['description']); ?></p>
+                <form method="POST" class="tiny-inline-form">
+                    <input type="hidden" name="product_id" value="<?php echo $p['id']; ?>">
+                    <label>৳ <input type="number" step="0.01" name="price" value="<?php echo $p['price']; ?>" style="width:70px;"></label>
+                    <label>Stock <input type="number" step="0.01" name="stock_quantity" value="<?php echo $p['stock_quantity']; ?>" style="width:70px;"></label>
+                    / <?php echo htmlspecialchars($p['unit']); ?>
+                    <button type="submit" name="update_product" class="btn btn-small">Update</button>
+                </form>
+                <a href="?delete=<?php echo $p['id']; ?>" onclick="return confirm('Remove this product?')" class="link-danger">Remove</a>
+            </div>
         <?php endforeach; ?>
     </div>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

@@ -67,15 +67,6 @@ require_once __DIR__ . '/../includes/header.php';
 
         <p class="auth-switch">Don't have an account? <a href="/smartfarm/auth/register.php">Register here</a></p>
 
-        <div class="demo-accounts">
-            <strong>Demo accounts</strong> (password: <code>password123</code>)
-            <ul>
-                <li>Owner: owner@smartfarm.com</li>
-                <li>Worker: worker@smartfarm.com</li>
-                <li>Buyer: buyer@smartfarm.com</li>
-            </ul>
-        </div>
+
     </div>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

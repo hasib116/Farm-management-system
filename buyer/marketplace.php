@@ -49,7 +49,7 @@ require_once __DIR__ . '/../includes/header.php';
                 <?php if ($p['image']): ?>
                     <img src="/smartfarm/assets/uploads/<?php echo htmlspecialchars($p['image']); ?>" alt="<?php echo htmlspecialchars($p['name']); ?>">
                 <?php else: ?>
-                    <div class="product-placeholder">🌽</div>
+                    <div class="product-placeholder"></div>
                 <?php endif; ?>
                 <h3><?php echo htmlspecialchars($p['name']); ?></h3>
                 <p><?php echo htmlspecialchars($p['description']); ?></p>
@@ -65,7 +65,7 @@ require_once __DIR__ . '/../includes/header.php';
     </div>
 
     <aside class="cart-box">
-        <h2>🛒 Your Cart</h2>
+        <h2> Your Cart</h2>
         <ul id="cart-list" class="cart-list">
             <li class="cart-empty">Cart is empty</li>
         </ul>
@@ -83,5 +83,3 @@ require_once __DIR__ . '/../includes/header.php';
         </form>
     </aside>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

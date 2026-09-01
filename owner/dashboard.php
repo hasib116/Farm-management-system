@@ -74,5 +74,3 @@ require_once __DIR__ . '/../includes/header.php';
     <a href="/smartfarm/owner/orders.php" class="card link-card"> Orders</a>
     <a href="/smartfarm/owner/reports.php" class="card link-card"> Reports</a>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>

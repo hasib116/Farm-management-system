@@ -62,20 +62,23 @@ require_once __DIR__ . '/../includes/header.php';
 <div class="card">
     <h2>My Field Logs</h2>
     <table class="data-table">
-        <tr><th>Crop</th><th>Date</th><th>Notes</th><th>Photo</th></tr>
-        <?php foreach ($logs as $l): ?>
         <tr>
-            <td><?php echo htmlspecialchars($l['crop_name']); ?></td>
-            <td><?php echo $l['entry_date']; ?></td>
-            <td><?php echo htmlspecialchars($l['notes']); ?></td>
-            <td>
-                <?php if ($l['photo']): ?>
-                    <a href="/smartfarm/assets/uploads/<?php echo htmlspecialchars($l['photo']); ?>" target="_blank">View</a>
-                <?php else: ?>-<?php endif; ?>
-            </td>
+            <th>Crop</th>
+            <th>Date</th>
+            <th>Notes</th>
+            <th>Photo</th>
         </tr>
+        <?php foreach ($logs as $l): ?>
+            <tr>
+                <td><?php echo htmlspecialchars($l['crop_name']); ?></td>
+                <td><?php echo $l['entry_date']; ?></td>
+                <td><?php echo htmlspecialchars($l['notes']); ?></td>
+                <td>
+                    <?php if ($l['photo']): ?>
+                        <a href="/smartfarm/assets/uploads/<?php echo htmlspecialchars($l['photo']); ?>" target="_blank">View</a>
+                        <?php else: ?>-<?php endif; ?>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </div>
-
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
