@@ -51,7 +51,6 @@ class Harvest
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // used in Owner reports/analytics
     public function totalYield()
     {
         $sql = "SELECT SUM(quantity) AS total FROM {$this->table}";
