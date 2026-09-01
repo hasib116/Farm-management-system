@@ -20,7 +20,6 @@ class Task
         return $stmt->execute();
     }
 
-    // All tasks (owner view) with worker + crop names joined
     public function getAll()
     {
         $sql = "SELECT t.*, u.name AS worker_name, c.name AS crop_name
