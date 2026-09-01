@@ -28,7 +28,6 @@ class Product
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // All products owned/managed (owner view)
     public function getByOwner($owner_id)
     {
         $sql = "SELECT * FROM {$this->table} WHERE owner_id = ? ORDER BY created_at DESC";
