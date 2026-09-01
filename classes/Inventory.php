@@ -42,7 +42,6 @@ class Inventory
         return $stmt->execute();
     }
 
-    // Consume stock (e.g. a task uses fertilizer) - subtracts amount
     public function consume($id, $amount)
     {
         $sql = "UPDATE {$this->table} SET quantity = quantity - ? WHERE id = ? AND quantity >= ?";
