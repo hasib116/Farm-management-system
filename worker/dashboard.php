@@ -49,4 +49,4 @@ require_once __DIR__ . '/../includes/header.php';
     <a href="/smartfarm/worker/field_logs.php" class="card link-card"> Field Data Logs</a>
     <a href="/smartfarm/worker/harvest.php" class="card link-card"> Record Harvest</a>
 </div>
-ss
+ 
