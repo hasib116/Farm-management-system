@@ -74,7 +74,6 @@ require_once __DIR__ . '/../includes/header.php';
             <label>I am registering as *</label>
             <select name="role" required>
                 <option value="">-- Select User Type --</option>
-                <option value="owner">Farm Owner</option>
                 <option value="worker">Farm Worker</option>
                 <option value="buyer">Buyer</option>
             </select>
