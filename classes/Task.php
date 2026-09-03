@@ -12,7 +12,6 @@ class Task
         $this->conn = $db->connect();
     }
 
-    // Owner creates a task and assigns it to a worker
     public function create($title, $description, $assigned_to, $assigned_by, $crop_id, $due_date)
     {
         $sql = "INSERT INTO {$this->table} (title, description, assigned_to, assigned_by, crop_id, due_date) VALUES (?, ?, ?, ?, ?, ?)";
@@ -21,7 +20,6 @@ class Task
         return $stmt->execute();
     }
 
-    // All tasks (owner view) with worker + crop names joined
     public function getAll()
     {
         $sql = "SELECT t.*, u.name AS worker_name, c.name AS crop_name
@@ -33,7 +31,6 @@ class Task
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // Tasks assigned to a specific worker
     public function getByWorker($worker_id)
     {
         $sql = "SELECT t.*, c.name AS crop_name

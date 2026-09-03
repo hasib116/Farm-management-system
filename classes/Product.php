@@ -20,7 +20,6 @@ class Product
         return $stmt->execute();
     }
 
-    // All products available in the marketplace (buyer view - only in-stock)
     public function getAvailable()
     {
         $sql = "SELECT * FROM {$this->table} WHERE stock_quantity > 0 ORDER BY created_at DESC";
@@ -28,7 +27,6 @@ class Product
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // All products owned/managed (owner view)
     public function getByOwner($owner_id)
     {
         $sql = "SELECT * FROM {$this->table} WHERE owner_id = ? ORDER BY created_at DESC";

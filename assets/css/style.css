@@ -217,7 +217,7 @@ a:hover {
     opacity: 0.9;
 }
 
-/* ---------- Forms ---------- */
+
 form label {
     display: block;
     margin: 10px 0 4px;
@@ -540,7 +540,6 @@ textarea {
     }
 }
 
-/* ---------- Order tracking ---------- */
 .order-header {
     display: flex;
     justify-content: space-between;
